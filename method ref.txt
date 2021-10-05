@@ -1,0 +1,9 @@
+1. How to refer static method
+-> Class1 obj1= Class2:: static_method_name;
+
+2. How to refer non static method
+-> Class2 obj2=new Class2; 
+   Class1 obj1=obj2::non_static_method_name
+   
+3. Constructor reference.
+-> -//- = class::new

@@ -1,0 +1,64 @@
+FUNCTIONAL INTERFACE
+1. Functional inteface is a interface that conatins exactly one abstract method
+2. Java provides predefined functional interfaces to deal with functional programming.
+	Example- Runnable, ActionListener, etc.
+
+______________________________________________________________________________________________________________________________________
+
+Difference between get() and load() in hibernate.
+
+get(): 
+		1. eager loading
+		2. returns null if there is no matching data
+		3. slower than load()
+		
+load():
+		1. lazy loading
+		2. throws object not found exception
+		3. faster than get()
+______________________________________________________________________________________________________________________________________
+
+Difference between wait() and sleep()
+
+sleep(): 
+		1. It causes the currently executing thread to sleep for the specified number of milliseconds.
+		2. It belongs to the Thread class.
+		3. It is static method.
+
+wait(): 
+		1. It causes the current thread to wait until another thread invokes the notify() or notifyAll() methods for this object.
+		2. It belongs to the Object class.
+		3. It is not static method.
+______________________________________________________________________________________________________________________________________
+
+Immutable class
+How to create immutable  class
+______________________________________________________________________________________________________________________________________
+
+CASCADING
+What Is Cascading?
+Entity relationships often depend on the existence of another entity, for example the Person–Address relationship. Without the Person, the Address entity doesn't have any meaning of its own. When we delete the Person entity, our Address entity should also get deleted.
+
+Cascading is the way to achieve this. When we perform some action on the target entity, the same action will be applied to the associated entity.
+______________________________________________________________________________________________________________________________________
+
+Anonymous class
+______________________________________________________________________________________________________________________________________
+Method referencing
+
+______________________________________________________________________________________________________________________________________
+
+Spring Actuator
+______________________________________________________________________________________________________________________________________
+
+predicate:
+
+It is the boolean valued function.
+______________________________________________________________________________________________________________________________________
+
+exception handling Spring annotations
+______________________________________________________________________________________________________________________________________
+Stream api
+______________________________________________________________________________________________________________________________________
+
+Runnable() vs callable()

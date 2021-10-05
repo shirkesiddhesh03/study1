@@ -1,0 +1,33 @@
+											Lambda Expression
+1. It is an anonymous function that doesn't have a name and doesn't belong to any class.
+2. It provides clear and concise way to respresent a method interface via an expression.
+3. Lambda expression is used to implement functional interface in very simple and short method.
+
+Note: Lambda expression works with functional interfaces only
+
+Benefits:
+1. Reduces the lines of code.
+2. Sequential and parallel expression supports by passing behaviour as an argument in method.
+3. To write more readable, maintainable and concise code.
+
+
+SYNTAX:
+	parameter -> expression_body
+
+
+Example:
+	@FunctionalInterface
+	interface Cab 	
+	{
+		void bookCab();
+	}
+
+	class A
+	{
+		public static void main(String ar[])
+		{
+			Cab cab =()->{System.out.println("Body of cab method"); };
+
+			cab.bookCab();
+		}
+	}

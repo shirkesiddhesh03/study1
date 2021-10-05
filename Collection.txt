@@ -1,0 +1,170 @@
+framework provides many interfaces (Set, List, Queue, Deque) and classes (ArrayList, Vector, LinkedList, PriorityQueue, HashSet, LinkedHashSet, TreeSet).
+Interfaces:
+	1.List interface:
+		It inhibits a list type data structure in which we can store the ordered collection of objects. It can have duplicate values.
+
+		List interface is implemented by the classes ArrayList, LinkedList, Vector, and Stack.
+
+		To instantiate the List interface, we must use :		
+		List <data-type> list1= new ArrayList();  
+		List <data-type> list2 = new LinkedList();  
+		List <data-type> list3 = new Vector();  
+		List <data-type> list4 = new Stack();  
+		
+		ArrayList<String> list=new ArrayList<String>();//Creating arraylist  
+		list.add("Ravi");//Adding object in arraylist  
+		list.add("Vijay");  
+		list.add("Ravi");  
+		list.add("Ajay");  
+		//Traversing list through Iterator  
+		Iterator itr=list.iterator();  
+		while(itr.hasNext()){  
+		System.out.println(itr.next());  
+		
+		LinkedList<String> al=new LinkedList<String>();  
+		al.add("Ravi");  
+		al.add("Vijay");  
+		al.add("Ravi");  
+		al.add("Ajay");  
+		Iterator<String> itr=al.iterator();  
+		while(itr.hasNext()){  
+		System.out.println(itr.next());  
+		
+		
+		Vector: It is syncronized. 
+		
+		
+		Stack:  It implements the last-in-first-out data structure
+		Stack<String> stack = new Stack<String>();  
+		stack.push("Ayush");  
+		stack.push("Garvit");  
+		stack.push("Amit");  
+		stack.push("Ashish");   
+		stack.push("Garima");  
+		stack.pop();  
+		Iterator<String> itr=stack.iterator();  
+		while(itr.hasNext()){  
+		System.out.println(itr.next());  
+	
+	2.Queue Interface: Queue interface maintains the first-in-first-out order.
+		Queue<String> q1 = new PriorityQueue();  
+		Queue<String> q2 = new ArrayDeque(); 
+		
+		
+		PriorityQueue:
+		PriorityQueue doesn't allow null values to be stored in the queue.
+		PriorityQueue<String> queue=new PriorityQueue<String>();  
+		queue.add("Amit Sharma");  
+		queue.add("Vijay Raj");  
+		queue.add("JaiShankar");  
+		queue.add("Raj");  
+		System.out.println("head:"+queue.element());  
+		System.out.println("head:"+queue.peek());  
+		System.out.println("iterating the queue elements:");  
+		Iterator itr=queue.iterator();  
+		while(itr.hasNext()){  
+		System.out.println(itr.next());  
+		
+		
+		
+	3.Deque Interface:
+		we can remove and add the elements from both the side. Deque stands for a double-ended queue which enables us to perform the operations at both the ends.
+		
+		ArrayDeque:
+		Deque<String> deque = new ArrayDeque<String>();  
+		deque.add("Gautam");  
+		deque.add("Karan");  
+		deque.add("Ajay");  
+		//Traversing elements  
+		for (String str : deque) {  
+		System.out.println(str);  
+		
+	4. Set Interface:
+		It represents the unordered set of elements which doesn't allow us to store the duplicate items. 
+		Set<data-type> s1 = new HashSet<data-type>();  
+		Set<data-type> s2 = new LinkedHashSet<data-type>();  
+		Set<data-type> s3 = new TreeSet<data-type>();  
+		
+		HashSet:
+		It contains unique items.
+		
+		HashSet<String> set=new HashSet<String>();  
+		set.add("Ravi");  
+		set.add("Vijay");  
+		set.add("Ravi");  
+		set.add("Ajay");  
+		//Traversing elements  
+		Iterator<String> itr=set.iterator();  
+		while(itr.hasNext()){  
+		System.out.println(itr.next());  
+		
+		LinkedHashSet
+		 It maintains the insertion order and permits null elements.
+		 
+		
+		TreeSet: maintains ascending order
+
+
+___________________________________________________________________________________________________________________________________________________________
+SPRING BOOT SECURITY
+dependecy: spring-boot-starter-security
+
+@Configuration
+@EnableWebSecurity
+Extends WebSecurityConfigureAdapter
+---------------------------------------------------------------------
+
+protected void configure(HttpSecurity) throws Exception
+{
+	http.authorizeRequests().
+		.antMatchers("/urlToAccessByAdminOnly").hasRole("ADMIN")
+		.antMatchers("/urlToAccessByUSER&ADMINOnly").hasAnyRole("USER", "ADMIN")
+		.antMatchers("/").permitAll()
+		.and().formLogin();
+		
+}
+
+___________________________________________________________________________________________________________________________________________________________
+
+
+			SPRING BOOT PROJECT DEPLOYMENT INTO TOMCAR
+			
+1. Change the packaging: <packaging>war</packaging>
+2. Add spring-boot-starter-tomcat as the provided scope
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
+3.Main class extends SpringBootServletInitializer
+	override configure method
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		

@@ -1,0 +1,76 @@
+1. difference between @component, @service & @repository
+
+2. Why spring recommends to write @repository on DAO layer and not @component
+-> with @component, no one will identify that this component contains query or DAO logic, therefore we use @repository
+	@repository helps to handle persistent related exceptions (DataAccessExceptoin) that spring provides.
+	NOTE: DataAccessExceptoin is a generic class that provides all DAO exceptions.
+	Any exception thrown by persistent layer, spring will wrap that out with its own exception called DataAccessExceptoin.
+	
+3. Explain Bean life cycle
+-> for Bean life cycle we have two annotations (1)@PostConstruct (2)@PreDestroy
+	(1)@PostConstruct: When container is created, beans will be instantiated and then that particular method annoted with @PostConstruct will be called first.
+	(2)@Predestroy: Method annoted with @PreDestroy will be called just before container is about to get destroyed and bean is about to get out of the container.
+		Example: method which conatain code to establish the database connection can be annotted with @PostConstruct as we dont want to create database connection again and again, so connection will be create once in the starting.
+				 method which contain code to close the database connection can be annotted with @PreDestroy, so that connection will be closed at the end.
+	NOTE: Spring provides one interface for similer functionality called InitializingBean and DisposableBean.
+
+	
+4.In spring webapp, we dont create context manually, spring takes care of it. When Dispatcher servlet loads, it creates object of context.
+  ContextLoaderLister class helps to initialize and destroy context in web application with help of its two methods called contextInitialized() & contextDestoyed()
+	
+5. restTemplate: it is REST client. It provides methods like getForEntity(), getForObject(), exchange(), etc.
+	getForObject(): It return only object like what type of object you want to return.
+	getForEntity(): It return response entity, with response entity you'll have control of header, body and http status.
+	
+6. Advantages of ResponseEntity
+-> using ResponseEntity we can send appropriate http status like OK, Bad Request,etc along with the body and also we can send headers.
+	eg. return ResponseEntity.status(HttpStatus.ACCEPTED).body(customers);
+
+7. Why is it important to handle time out while calling any of REST endpoint.
+-> when we are connecting to server, those connections made through the threads. So, if connection dont get established then thread will remain there and try to connecting server, same will happen with other thread. And at the end there will burden of threads.
+	So, to avoid this situation it is important to handle time out to release the thread.
+	
+8. Difference between read timeout and Server timeout
+-> Server timeout: server timeout happens when we are not able to make connection with server.
+   Read timeout: this happens when connection is established with server but we are not able to read some data or we're not getting response from server.
+ 
+9. how does authentication work in Spring?
+-> When we hit the request it goes to the authentication filter, authentication filter gives us an authentication object which is not a validated object
+   that object will be passed to the authentication manager builder, builder will further find the authentication provider, provider validates the object,
+   provider will pass that validated object to authentication manager builder, builder further pass the oject to the secuirity context holder.
+   Why it is passing to the secrity context holder- when the user is signing for the next time it wont ask for credentials again, it will check authentication object from security context holder
+   
+10. What is content negotiation?
+-> It means what kind of content you want your API to accept & what kind of content you want your API to produce or to sends as a response 
+   eg. @GetMapping(value="Course/", consumes={MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE}, produces={MediaType.APPLICATION_JSON_VALUE})
+
+11. In microservices environment, lets say you want to implement all your cross cutting concerns, so where you will be implement this?
+-> At the gateway level
+
+12. How to create custom validator in Spring.
+->   
+
+13. How to create custom annotations in Java
+-> using @Interface keyword.
+   eg. 
+	@interface MyAnnotation{  
+		int value();  
+	}  
+	implementation: @MyAnnotation(value=10)  
+
+14. How hashmap works internally?
+-> a. When we declare a Map, an array of 16 buckets gets created.
+   b. When we do put operation, hashcode of key gets calculated which further used to determine the index where that perticular key and value are going to be stored.
+   c. Once index gets determined, a linked list gets created at that index.
+   d. That linked list stores 4 things: (1)Hashcode (2)key (3) value (4) address of next linked list.
+
+15. Failfast vs Failsafe collections in java
+-> 
+
+16. What is singleton design pattern and how to create singleton class in java?
+-> Singleton design patterns means only one object will be created of the class in the whole runtime.
+	NOTE: In spring singleton scope, only one object of bean will be created per container (ApplicationContext)
+	
+	implementation: a. private constructor b. static method with same return type as the class
+	
+	
