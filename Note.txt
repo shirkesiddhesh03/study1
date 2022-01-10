@@ -3,6 +3,7 @@ FUNCTIONAL INTERFACE
 2. Java provides predefined functional interfaces to deal with functional programming.
 	Example- Runnable, ActionListener, etc.
 
+The reason it's called a "functional interface" is because it effectively acts as a function. Since you can pass interfaces as parameters
 ______________________________________________________________________________________________________________________________________
 
 Difference between get() and load() in hibernate.
@@ -24,6 +25,7 @@ sleep():
 		1. It causes the currently executing thread to sleep for the specified number of milliseconds.
 		2. It belongs to the Thread class.
 		3. It is static method.
+		4. If we call interrupt() method , it will wake up the sleeping thread
 
 wait(): 
 		1. It causes the current thread to wait until another thread invokes the notify() or notifyAll() methods for this object.
@@ -33,6 +35,12 @@ ________________________________________________________________________________
 
 Immutable class
 How to create immutable  class
+
+	1. The class must be declared as final so that child classes can’t be created.
+	2. Data members in the class must be declared private so that direct access is not allowed.
+	3. Data members in the class must be declared as final so that we can’t change the value of it after object creation.
+	4. A parameterized constructor should initialize all the fields performing a deep copy so that data members can’t be modified with an object reference.
+	5. Deep Copy of objects should be performed in the getter methods to return a copy rather than returning the actual object reference)
 ______________________________________________________________________________________________________________________________________
 
 CASCADING
@@ -40,16 +48,21 @@ What Is Cascading?
 Entity relationships often depend on the existence of another entity, for example the Person–Address relationship. Without the Person, the Address entity doesn't have any meaning of its own. When we delete the Person entity, our Address entity should also get deleted.
 
 Cascading is the way to achieve this. When we perform some action on the target entity, the same action will be applied to the associated entity.
+eg. 
+	@OneToMany(mappedBy = "person", cascade = CascadeType.ALL)
+    private List<Address> addresses;
 ______________________________________________________________________________________________________________________________________
 
 Anonymous class
+
+Anonymous classes enable you to make your code more concise. They enable you to declare and instantiate a class at the same time
 ______________________________________________________________________________________________________________________________________
 Method referencing
 
 ______________________________________________________________________________________________________________________________________
 
-Spring Actuator
-______________________________________________________________________________________________________________________________________
+Spring Actuator: with the help of spring actuator, we can monitor and manage our application while it is in production.
+____________________________________________________________________________________________________________________________________
 
 predicate:
 
@@ -62,3 +75,266 @@ Stream api
 ______________________________________________________________________________________________________________________________________
 
 Runnable() vs callable()
+
+1. Runnable is a functional inteface with run() method whereas Callable is generic Interface with call() method
+2. run() method can't throw checked exception whereas call() method can throw checked exception.
+3. run() method doesn't return any value while call() does (String is the return type of call()).
+
+______________________________________________________________________________________________________________________________________
+
+Serialization in Java
+- Serialization in Java is a mechanism of writing the state of an object into a byte-stream.
+-Serialization is simply turning an existing object into a byte array.
+ This byte array represents the class of the object, the version of the object, and the internal state of the object.
+ This byte array can then be used between JVM's running the same code to transmit/read the objec
+
+- Implement Serializable interface then JVM will take care of serialization.
+
+--------------------------------------------------------------------------------------------------------
+
+Marker interface:A marker interface is an interface that has no methods or constants inside it.
+				Clonnable and Serializable are two marker interfaces
+				
+-----------------------------------------------------------------------------------------------------------
+
+transient variable				
+______________________________________________________________________________________________________________________________________
+
+Factory design pattern in Java
+
+______________________________________________________________________________________________________________________________________
+
+how hashset works internaly
+-
+Now as you can see that whenever we create a HashSet, it internally creates a HashMap and if we insert an element into this HashSet using add() method,
+it actually calls put() method on internally created HashMap object with element you have specified as it’s key and constant Object called “PRESENT” as it’s value.
+So we can say that a Set achieves uniqueness internally through HashMap. Now the whole story comes around how a HashMap and put() method internally works.
+
+As we know in a HashMap each key is unique and when we call put(Key, Value) method,
+ it returns the previous value associated with key, or null if there was no mapping for key. So in add() method we check the return value of map.put(key, value) method with null value.
+
+If map.put(key, value) returns null, then the statement “map.put(e, PRESENT) == null” will return true and element is added to the HashSet(internally HashMap).
+If map.put(key, value) returns old value of the key, then the statement “map.put(e, PRESENT) == null” will return false and element is not added to the HashSet(internally HashMap).
+
+______________________________________________________________________________________________________________________________________
+IO in Java
+
+Buffer in java
+
+How to avoid scenario like, two users are trying to modify the content at the same time.
+
+difference between Spring application and Spring Boot application (When we run it)
+______________________________________________________________________________________________________________________________________
+difference between statement, preparedStatement and callableStatement
+
+1. Statement : 
+It is used for accessing your database.
+Statement interface cannot accept parameters and useful when you are using static SQL statements at runtime.
+If you want to run SQL query only once then this interface is preferred over PreparedStatement. 
+
+Statement GFG = con.createStatement();
+
+
+2. CallableStatement :
+It is used when you want to use the database stored procedures. CallableStatement can accept runtime input parameters.
+
+CallableStatement GFG = con.prepareCall("{call anyProcedure(?, ?, ?)}");
+
+
+3. PreparedStatement :
+It is used when you want to use SQL statements many times. The PreparedStatement interface accepts input parameters at runtime.
+
+
+PreparedStatement GFG = con.prepareStatement("update STUDENT set NAME = ? where ID = ?");
+____________________________________________________________________________________________________________________________________
+
+is address for Rest API is fixed or dynamic
+
+______________________________________________________________________________________________________________________________________
+Types of JDBC Driver:
+
+1) JDBC-ODBC bridge driver
+The JDBC-ODBC bridge driver uses ODBC driver to connect to the database.
+The JDBC-ODBC bridge driver converts JDBC method calls into the ODBC function calls
+
+2) Native-API driver
+The Native API driver uses the client-side libraries of the database.
+The driver converts JDBC method calls into native calls of the database API. It is not written entirely in java.
+
+3) Network Protocol driver
+The Network Protocol driver uses middleware (application server) that converts JDBC calls directly or indirectly into the vendor-specific database protocol.
+It is fully written in java.
+
+4) Thin driver
+The thin driver converts JDBC calls directly into the vendor-specific database protocol.
+That is why it is known as thin driver. It is fully written in Java language.
+
+
+______________________________________________________________________________________________________________________________________
+Difference between save() and saveAndFlush()
+
+save(): It doesn't flush data directly to a database until and unless we explicitly call flush and commit method.
+saveAndFlush(): It's flush directly flush data to a database.
+______________________________________________________________________________________________________________________________________
+Difference between ServletConfig and ServletContext in Java Servlet
+
+ServletConfig and ServletContext, both are objects created at the time of servlet initialization and used to provide some initial parameters or configuration information to the servlet.
+But, the difference lies in the fact that information shared by ServletConfig is for a specific servlet, while information shared by ServletContext is available for all servlets in the web application.
+
+____________________________________________________________________________________________________________________________________
+
+Super class of all classes in Java
+
+methods of Object class
+
+____________________________________________________________________________________________________________________________________
+Oops concepts:
+
+Object
+Class
+Inheritance
+Polymorphism
+Abstraction
+Encapsulation
+
+____________________________________________________________________________________________________________________________________
+
+equal():
+
+public boolean equals(Object o)
+{
+	if(o==null || getClass() != o.getClass())
+	{
+		return flase;
+	}
+	
+	if(o == this)
+	{
+		return true;
+	}
+	
+	Employee e= (Employee)o;
+	return(this.getId()==e.getId());
+}
+
+____________________________________________________________________________________________________________________________________
+
+What is optional class in Java
+
+____________________________________________________________________________________________________________________________________
+
+-Internal working of ConcurrentModificationException:
+-> The real couse of ConcurrentModificationException is the inconsistent modCount.
+   When you are iterating over ArrayList then Iterator's next() method keeps track of modCount.
+   If you modify the collection by adding or removing the element then the modCount will change and it will not match with expectedModCount.
+   Hence, Iterator will throw ConcurrentModificationException.
+   
+____________________________________________________________________________________________________________________________________
+
+what unopinionated view and opinionated view  
+
+____________________________________________________________________________________________________________________________________
+Types of threads:
+1. User Thread: User threads are high-priority threads. The JVM will wait for any user thread to complete its task before terminating it.
+2. Daemon Thread: daemon threads are low-priority threads whose only role is to provide services to user threads.
+
+____________________________________________________________________________________________________________________________________
+Types of Variables:
+1. Local Variable
+	A variable declared inside the body of the method is called local variable. You can use this variable only within that method and the other methods in the class aren't even aware that the variable exists.
+	A local variable cannot be defined with "static" keyword.
+	
+2. Instance Variable
+	A variable declared inside the class but outside the body of the method, is called an instance variable. It is not declared as static.
+
+
+3. Static variable
+	A variable that is declared as static is called a static variable.\
+	It cannot be local. You can create a single copy of the static variable and share it among all the instances of the class.
+	Memory allocation for static variables happens only once when the class is loaded in the memory.
+	
+____________________________________________________________________________________________________________________________________
+join() method of Thread class:
+Thread class’s join() method can be used to stop current execution of thread until thread it joins, completes its task.
+So basically, it waits for the thread on which join method is getting called, to die.For example:
+
+Here when you call t1.join(), main thread will wait for t1 to complete its start before resuming its execution.
+
+// Main thread execution
+Thread t1=new Thread(mr,"Thread 1");t1.start();
+// lets waits for t1 to die
+try {
+t1.join();
+} catch (InterruptedException e) {
+ 	
+____________________________________________________________________________________________________________________________________
+intermediate and terminal operations
+
+intermediate: These operations are used to pipeline other methods and to transform into the other streams
+				sorted(), distinct()
+terminal: A terminal operation in Java is a method applied to a stream as the final step.
+			forEach, count
+____________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

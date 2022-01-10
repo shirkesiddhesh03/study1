@@ -27,7 +27,7 @@
 	eg. return ResponseEntity.status(HttpStatus.ACCEPTED).body(customers);
 
 7. Why is it important to handle time out while calling any of REST endpoint.
--> when we are connecting to server, those connections made through the threads. So, if connection dont get established then thread will remain there and try to connecting server, same will happen with other thread. And at the end there will burden of threads.
+-> when we are connecting to server, those connections made through the threads. So, if connection doesn't get established then thread will remain there and will keep trying to connect to server, same will happen with other thread. And at the end there will burden of threads.
 	So, to avoid this situation it is important to handle time out to release the thread.
 	
 8. Difference between read timeout and Server timeout
@@ -72,5 +72,8 @@
 	NOTE: In spring singleton scope, only one object of bean will be created per container (ApplicationContext)
 	
 	implementation: a. private constructor b. static method with same return type as the class
+	
+	
+	
 	
 	

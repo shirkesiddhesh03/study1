@@ -1,0 +1,5 @@
+Microservices: Its is an architectural style through which you can build application in the form of small services, each service will have its own data access layer and API
+
+API: this is a set of procedures or functions which allows consumer to use underlyning service of an application.
+	 API's help services or applications to communicate with each other.	
+	 

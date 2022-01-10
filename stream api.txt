@@ -66,6 +66,11 @@ METHODS OF Stream
 				System.out.println(set.stream().sorted().collect(Collectors.toList()));
 				OR 
 				set.stream().sorted().forEach(System.out::println);
+				
+5. distinct(): It returns unique elements
+			eg. 
+				String[] r={"a","b","c","c"};
+				Arrays.stream(r).distinct().forEach(System.out::println);
 									
 
 
