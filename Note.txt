@@ -276,6 +276,7 @@ terminal: A terminal operation in Java is a method applied to a stream as the fi
 			forEach, count
 ____________________________________________________________________________________________________________________________________
 
+Difference between Comparable and Comparator
 
 
 
