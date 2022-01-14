@@ -277,6 +277,18 @@ terminal: A terminal operation in Java is a method applied to a stream as the fi
 ____________________________________________________________________________________________________________________________________
 
 Difference between Comparable and Comparator
+_____________________________________________________________________________________________________________________________________
+SORT EMPLOYEES IN ASCENDING ORDER OF SALARY USING STREAM
+
+public ResponseEntity<List<Emp>> getSortedEmp1()
+	{
+		List <Emp> l=empService.getSortedEmp();
+		List<Emp>sl=l.stream().sorted((o1,o2)->(int)(o1.getSalary()-o2.getSalary())).collect(Collectors.toList());
+		return new ResponseEntity<>(sl,HttpStatus.FOUND);
+	}
+_____________________________________________________________________________________________________________________________________	
+
+SQL query to find employee who has 3rd highest salary
 
 
 
