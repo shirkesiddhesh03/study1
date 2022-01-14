@@ -290,6 +290,17 @@ ________________________________________________________________________________
 
 SQL query to find employee who has 3rd highest salary
 
+MYSQL:
+Select * from emp
+order by salary DESC
+limit 2,1;
+
+SQL:
+MYSQL:
+Select * from emp
+order by salary DESC
+limit 2 offset 1;
+
 
 
 
