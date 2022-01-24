@@ -43,6 +43,30 @@ How to create immutable  class
 	5. Deep Copy of objects should be performed in the getter methods to return a copy rather than returning the actual object reference)
 ______________________________________________________________________________________________________________________________________
 
+Singleton class in java
+
+Class A
+{
+	public static void main(String a[])
+	{
+		B obj=B.getInstance();
+	}
+}
+
+class B
+{
+	private B()
+	{
+	}
+	static B b=new b();
+	
+	public static B getInstance()
+	{
+		return b;
+	}
+}
+______________________________________________________________________________________________________________________________________
+
 CASCADING
 What Is Cascading?
 Entity relationships often depend on the existence of another entity, for example the Person–Address relationship. Without the Person, the Address entity doesn't have any meaning of its own. When we delete the Person entity, our Address entity should also get deleted.
