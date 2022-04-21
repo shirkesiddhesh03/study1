@@ -325,6 +325,30 @@ Select * from emp
 order by salary DESC
 limit 2 offset 1;
 
+_________________________________________________________________________________________________________________________
+
+How to read application.properties in java
+eg.
+@Configuration
+public class DataSourceManager
+{
+	@Bean("ds1")
+	@Primary // Its important to specify this annotation in case of multiple databases otherwise error would be thrown
+	@ConfigurationProperties(prefix="app.datasource1")
+	public DataSource primaryDS()
+	{
+		return DataSourceBuilder.create().build();
+	}
+	
+	@Bean("ds2")
+	@ConfigurationProperties(prefix="app.datasource2")
+	public DataSource primaryDS()
+	{
+		return DataSourceBuilder.create().build();
+	}
+	
+}
+
 
 
 
