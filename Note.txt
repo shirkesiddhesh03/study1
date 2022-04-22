@@ -209,7 +209,14 @@ ________________________________________________________________________________
 
 Super class of all classes in Java
 
-methods of Object class
+methods of Object class:
+int hashCode()
+boolean equals()
+String toString()
+final void notify()
+final void notifyAll()
+final void wait()
+void finalize() 	
 
 ____________________________________________________________________________________________________________________________________
 Oops concepts:
