@@ -335,6 +335,11 @@ limit 2 offset 1;
 _________________________________________________________________________________________________________________________
 
 How to read application.properties in java
+-> We can use @Value to fetch the value of any property from application.properties file
+	eg.	@Value("${server.port}")
+		private String serverPort;
+__________________________________________________________________________________________________________________________		
+
 eg.
 @Configuration
 public class DataSourceManager
