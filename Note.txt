@@ -33,7 +33,9 @@ wait():
 		3. It is not static method.
 ______________________________________________________________________________________________________________________________________
 
-Immutable class
+Immutable class:
+In Java, when we create an object of an immutable class, we cannot change its value. For example, String is an immutable class. Hence, we cannot change the content of a string once created.
+
 How to create immutable  class
 
 	1. The class must be declared as final so that child classes can’t be created.
@@ -94,6 +96,17 @@ It is the boolean valued function.
 ______________________________________________________________________________________________________________________________________
 
 exception handling Spring annotations
+
+public class ProductNotfoundException extends RuntimeException {
+   private static final long serialVersionUID = 1L;
+   }
+
+@ControllerAdvice
+Class A{
+	@ExceptionHandler(value=ProductNotfoundException.class)
+	method(){
+	}
+}
 ______________________________________________________________________________________________________________________________________
 Stream api
 ______________________________________________________________________________________________________________________________________
