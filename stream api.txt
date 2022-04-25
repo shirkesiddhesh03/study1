@@ -71,7 +71,32 @@ METHODS OF Stream
 			eg. 
 				String[] r={"a","b","c","c"};
 				Arrays.stream(r).distinct().forEach(System.out::println);
-									
+				
+_________________________________________________________________________________________________________________________________________________________
+
+List<Employee> empList=new ArrayList<>();
+empList.add(new Employee(101,"A",101,"Active", 2000));
+empList.add(new Employee(102,"B",101,"Active", 5000));
+empList.add(new Employee(103,"C",102,"Active", 6000));
+empList.add(new Employee(104,"D",102,"Active", 4000));
+empList.add(new Employee(105,"E",103,"Active", 3000));
+empList.add(new Employee(106,"F",103,"Active", 3500));
+empList.add(new Employee(107,"G",104,"Active", 3500));
+
+//Print employee based on dept (group by dept)
+Map<Integer, List<Employee>> empListBasedOnDept=empList.stream().collect(Collectors.groupingBy(Employee::getDept, Collectors.toList()));
+
+empListBasedOnDept.entrySet().forEach()(entry->{
+	System.out.println(entry.getKey()+"- "+entry.getValue());
+	});
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//Print count of empoyees work in each dept
+Map<Integer, long> empCountBasedOnDept=empList.stream().collect(Collectors.groupingBy(Employee::getDept, Collectors.counting()));
+
+empCountBasedOnDept.entrySet().forEach()(entry->{
+	System.out.println("Dept: "+entry.getKey()+"- "+"Employee count: "+entry.getValue());
+	});
 
 
 
