@@ -73,15 +73,16 @@ METHODS OF Stream
 				Arrays.stream(r).distinct().forEach(System.out::println);
 				
 _________________________________________________________________________________________________________________________________________________________
+// empID Name deptID status salary
 
 List<Employee> empList=new ArrayList<>();
-empList.add(new Employee(101,"A",101,"Active", 2000));
-empList.add(new Employee(102,"B",101,"Active", 5000));
-empList.add(new Employee(103,"C",102,"Active", 6000));
-empList.add(new Employee(104,"D",102,"Active", 4000));
-empList.add(new Employee(105,"E",103,"Active", 3000));
-empList.add(new Employee(106,"F",103,"Active", 3500));
-empList.add(new Employee(107,"G",104,"Active", 3500));
+empList.add(new Employee(101,"A",101,"active", 2000));
+empList.add(new Employee(102,"B",101,"active", 5000));
+empList.add(new Employee(103,"C",102,"inactive", 6000));
+empList.add(new Employee(104,"D",102,"inactive", 4000));
+empList.add(new Employee(105,"E",103,"active", 3000));
+empList.add(new Employee(106,"F",103,"active", 3500));
+empList.add(new Employee(107,"G",104,"inactive", 3500));
 
 //Print employee based on dept (group by dept)
 Map<Integer, List<Employee>> empListBasedOnDept=empList.stream().collect(Collectors.groupingBy(Employee::getDept, Collectors.toList()));
@@ -97,6 +98,18 @@ Map<Integer, long> empCountBasedOnDept=empList.stream().collect(Collectors.group
 empCountBasedOnDept.entrySet().forEach()(entry->{
 	System.out.println("Dept: "+entry.getKey()+"- "+"Employee count: "+entry.getValue());
 	});
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+//Print active/inactive employees
+
+long activeEmpCount=empList.stream().filter(e-> "active'.equals(e.getStatus())).count();
+long inAtiveEmpCount=empList.stream().filter(e-> "inactive'.equals(e.getStatus())).count();
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+//Print empoyee who has highest/lowest salary
+
+empList.stream().max(Comparator.comparing(Employee::getSalary));
+empList.stream().min(Comparator.comparing(Employee::getSalary));
+
 
 
 
