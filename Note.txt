@@ -126,16 +126,22 @@ Serialization in Java
  This byte array represents the class of the object, the version of the object, and the internal state of the object.
  This byte array can then be used between JVM's running the same code to transmit/read the objec
 
+- Serialization enables us to save the state of an object and recreate the object in a new location.
+
 - Implement Serializable interface then JVM will take care of serialization.
 
 --------------------------------------------------------------------------------------------------------
 
 Marker interface:A marker interface is an interface that has no methods or constants inside it.
 				Clonnable and Serializable are two marker interfaces
-				
+- The main use of the Marker Interface in Java is to convey to the JVM that the class implementing some interface of this category has to be granted some special behavior
+- It provides run-time type information about objects, so the compiler and JVM have additional information about the object.
+- Examples of marker interface are Serializable, Cloneable and Remote interface				
 -----------------------------------------------------------------------------------------------------------
 
-transient variable				
+transient variable:
+- Transient variables are special types of variables created by using the transient keyword. An instance of this type of variable does not have its value serialized at the time of serialization. Transient variables are variables that are initialized with their default values during de-serialization
+- Eg. transient int age;
 ______________________________________________________________________________________________________________________________________
 
 Factory design pattern in Java
@@ -222,6 +228,7 @@ But, the difference lies in the fact that information shared by ServletConfig is
 ____________________________________________________________________________________________________________________________________
 
 Super class of all classes in Java
+- The class named Object is the super class of every class in Java
 
 methods of Object class:
 int hashCode()
