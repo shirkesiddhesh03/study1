@@ -45,7 +45,8 @@ How to create immutable  class
 	5. Deep Copy of objects should be performed in the getter methods to return a copy rather than returning the actual object reference)
 ______________________________________________________________________________________________________________________________________
 
-Singleton class in java
+Singleton class in java: 
+Singleton pattern restricts the instantiation of a class and ensures that only one instance of the class exists in the Java Virtual Machine
 
 Class A
 {
