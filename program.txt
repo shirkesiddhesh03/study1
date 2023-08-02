@@ -1,0 +1,294 @@
+import java.io.IOException;
+import java.util.*;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
+public class B
+{
+	public static void main(String [] ar)
+	{
+//		https://javaconceptoftheday.com/java-hashmap-programs-and-examples/	
+		
+//		find Maximum Occurring Character in String
+		
+//		int max=-1;
+//		char c=' ';
+//		
+//		String s="Siddhesh Shankar Shirke";
+//		s=s.replaceAll(" ", "");
+//		System.out.println(s);
+//		int chr[]= new int[256];
+//		
+//		
+//		for(int i=0;i<s.length();i++)
+//		{
+//			chr[s.charAt(i)]=chr[s.charAt(i)]+1;
+//		}
+//		for(int i=0;i<s.length();i++)
+//		{
+//			if(max<chr[s.charAt(i)])
+//			{
+//				max=chr[s.charAt(i)];
+//				c=s.charAt(i);
+//			}
+//		}
+//		
+//		System.out.println(c+" "+max);
+	
+		
+		
+//		FIND NUMBER OF WORDS IN STRING
+//		
+//		String s="siddhesh shankar shirke";
+//		String []sr=s.split(" ");
+//		System.out.println(sr.length);
+		
+		
+		
+//		FIND THE DUPLICATES AND NO OF OCCURENCES
+//		
+//		String s="siddhesh";
+//		char sr[]=s.toCharArray();
+//		String d="";
+//		int count[]=new int[256];
+//		
+//		for(int i=0;i<sr.length;i++)
+//		{
+//			count[s.charAt(i)]=count[s.charAt(i)]+1;
+//			for(int j=i+1;j<sr.length;j++)
+//			{
+//				
+//				if(sr[i]==sr[j])
+//				{
+//					d=d+sr[i];
+//					
+//				}
+//			}
+//		}
+//		
+//			for(int j=0;j<d.length();j++)
+//			{
+//				System.out.println(d.charAt(j)+" "+count[d.charAt(j)]);
+//			}
+//		
+//		System.out.println(d);
+//		
+		
+//		MAP ITERATION
+//		
+//		Map <String, String> map=new HashMap<String, String>();
+//		map.put("name","Siddhesh");
+//		map.put("surname","Shirke");
+//		map.put("age","23");
+//		
+//		for(Map.Entry<String,String> entry: map.entrySet())
+//		{
+//			System.out.println(entry.getKey()+" : "+entry.getValue());
+//		}
+		
+		
+//		
+//		System.out.println("main");
+//		I1 i1=()->{System.out.println("Interface: book() //Lambda Expression");};
+//		
+//		i1.book();
+		
+		
+		
+//		List<String> list = new ArrayList<String>();
+//		list.add("a");
+//		list.add("b");
+//		list.add("c");
+//		list.add("a");
+//		list.add("a");
+//		list.add("a");
+//
+//		int countA = Collections.frequency(list, "a");
+//		int countB = Collections.frequency(list, "b");
+//		int countC = Collections.frequency(list, "c");
+//
+//		System.out.println(countA +" "+countB+" "+countC);
+		
+		
+		
+		
+//		FIND THE NUMBER OF OCCURENCES OF WORDS IN A GIVEN SENTENCE or FIND DUPLICATE WORDS
+//		
+//		String a="Java is best langauage is java my favourite langauage is java";
+//		String arr[]=a.split(" ");
+//		
+//		Map<String, Integer> map=new HashMap<String, Integer>();
+//		for(String word: arr)
+//		{
+//			if(map.containsKey(word))
+//			{
+//				map.put(word.toLowerCase(), map.get(word)+1);
+//			}
+//			else
+//			{
+//				map.put(word.toLowerCase(), 1);
+//			}
+//		}
+//		
+//		for(Map.Entry<String, Integer> entry: map.entrySet() )
+//		{
+//			System.out.println(entry.getKey()+" : "+entry.getValue());
+//		}
+		
+		
+//		FIND THE NUMBER OF OCCURENCES OF letters IN A GIVEN SENTENCE or FIND DUPLICATE letters
+//		String a="siddhesh shirke";
+//		a=a.replace(" ","");
+//		a=a.toLowerCase();
+//		char arr[]=a.toCharArray();
+//		Map<Character, Integer> map=new HashMap<Character, Integer>();
+//		for(char s: arr)
+//		{
+//			if(map.containsKey(s))
+//			{
+//				map.put(s,map.get(s)+1);
+//			}
+//			else
+//			{
+//				map.put(s,1);
+//			}
+//		}
+//		
+//		for(Map.Entry<Character,Integer> entry: map.entrySet())
+//		{
+//			System.out.println(entry.getKey()+" : "+entry.getValue());
+//		}
+//		String a="a";
+//		String b="a";
+//		String c= new String("a");
+//		String z=new String("a");
+//		int d=1;
+//		int e=1;
+//		Integer i=new Integer(1);
+//		System.out.println(z==c);
+//		System.out.println(a==b);
+//		System.out.println(a==z);
+		
+		
+		
+//		Map <String, Integer> map= new HashMap<String, Integer>();
+//		map.put("A",1);
+//		map.put("B",2);
+//		map.put("E",4);
+//		map.put("D",3);
+//		
+//		System.out.println(map.keySet().stream().sorted().collect(Collectors.toList()));
+//		
+////		Map <String, Integer> sortedMap=new TreeMap<String, Integer>(map);
+////												
+////		for(Map.Entry<String, Integer> e: sortedMap.entrySet())
+////		{
+////			System.out.println(e.getKey() +"  "+e.getValue());
+////		}
+//		int ar1[]=new int[map.size()];
+//		for(int i=0;i<map.size();i++)
+//		{
+//			ar1[i]=map.get(key)
+//		}
+			
+//		String a="aba";
+//		String rev="";
+//		for(int i=a.length()-1; i>=0;i--)
+//		{
+//			rev=rev+a.charAt(i);
+//		}
+//		if(a.equals(rev))
+//		{
+//			System.out.println("Palindrom");
+//		}
+//		else
+//		{
+//			System.out.println("Not palindrom");
+//		}
+		
+//		int x=123;
+//		String s=Integer.toString(x);
+//		System.out.println(s);
+//		String rev="";
+//		for(int i=s.length()-1; i>=0;i--)
+//		{
+//			rev=rev+s.charAt(i);
+//		}
+//		int z=Integer.parseInt(rev);
+//		
+//		
+//		System.out.println(z);
+		
+		
+//		FIND EVEN NOS. USING STREAM API
+		
+//		Integer no[]= {2,3,4,5,6,7,8};
+//		List <Integer> l= Arrays.asList(no);
+//		
+//		System.out.println(l);
+//		
+//		List<Integer> fl= l.stream().filter(i->i%2==0).collect(Collectors.toList());
+//		
+//		System.out.println(fl);
+		
+//		HashMap<String, Integer> map= new HashMap<String, Integer>();
+//		map.put("one", 1);
+//		map.put("one", 2);
+//		
+//		for(Map.Entry<String, Integer> entry:map.entrySet())
+//		{
+//			System.out.println(entry.getKey()+" "+entry.getValue());
+//		}
+//		
+		
+		
+		
+		//REVERSE INTEGER
+		int no=1234;
+		int reminder=0;
+		int rev=0;
+		while(no!=0)
+		{
+			reminder=no%10;
+			rev=rev * 10 +reminder;
+			no=no/10;
+		}
+		
+		System.out.println(rev);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+}
