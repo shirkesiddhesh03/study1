@@ -30,3 +30,9 @@ The following are the three methods you should know about while working on Inter
 
 6) Spring Boot auto-configuration
 -> Spring Boot auto-configuration attempts to automatically configure your Spring application based on the jar dependencies that you have added
+
+7) Exception handling in Spring boot
+-> 
+- The @ControllerAdvice is an annotation, to handle the exceptions globally.
+- The @ExceptionHandler is an annotation used to handle the specific exceptions and sending the custom responses to the client.
+- check url for more details: https://www.tutorialspoint.com/spring_boot/spring_boot_exception_handling.htm
