@@ -110,7 +110,20 @@ long inAtiveEmpCount=empList.stream().filter(e-> "inactive'.equals(e.getStatus()
 empList.stream().max(Comparator.comparing(Employee::getSalary));
 empList.stream().min(Comparator.comparing(Employee::getSalary));
 
+__________________________________________________________________________________________________________________________
 
+
+//		//STREAM OPERATIONS ON LIST
+//		List<Integer> list= Arrays.asList(3,4,6,8,1,5);
+//		
+//		//1. find greatest number of list
+//		System.out.println(list.stream().max(Integer::compare).get());
+//		
+//		//2. find smallest number of list
+//		System.out.println(list.stream().min(Integer::compare).get());
+//		
+//		//3. Summation of all numbers of list
+//		System.out.println(list.stream().reduce(0,(a,b)->a+b));
 
 
 
