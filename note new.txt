@@ -1,0 +1,32 @@
+1) what is @Component, @Service, @Repository
+-> https://www.baeldung.com/spring-component-annotation
+
+2)What is Interceptor
+->
+You can use the Interceptor in Spring Boot to perform operations under the following situations −
+	- Before sending the request to the controller
+	- Before sending the response to the client
+For example, you can use an interceptor to add the request header before sending the request to the controller and add the response header before sending the response to the client.
+To work with interceptor, you need to create @Component class that supports it and it should implement the HandlerInterceptor interface.
+The following are the three methods you should know about while working on Interceptors −
+	- preHandle() method − This is used to perform operations before sending the request to the controller. This method should return true to return the response 
+                                                                   to the client.
+	- postHandle() method − This is used to perform operations before sending the response to the client.
+	- afterCompletion() method − This is used to perform operations after completing the request and response.
+
+3) Profiles in spring boot
+-> Spring Boot profiles group parts of the application configuration and make it be available only in certain environments
+	application-dev.properties
+	application-prod.properties
+	application.properties
+- In "application.properties" We use the "spring.profiles.active" to set active profiles. Eg. spring.profiles.active=local
+
+
+4) how to make list immuatble
+-> Collections.unmodifiableList(list);
+
+5) @SpringBootApplication
+-> combination of @ComponentScan, @EnableAutoConfiguration and @Confuguration
+
+6) Spring Boot auto-configuration
+-> Spring Boot auto-configuration attempts to automatically configure your Spring application based on the jar dependencies that you have added
