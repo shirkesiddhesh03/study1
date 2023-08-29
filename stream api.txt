@@ -124,6 +124,11 @@ ________________________________________________________________________________
 //		
 //		//3. Summation of all numbers of list
 //		System.out.println(list.stream().reduce(0,(a,b)->a+b));
+//	
+//		//4. arrange numbers in descending order
+//		int [] outArr=new int[inArr.length];
+//		List<Integer> list= Arrays.stream(inArr).mapToObj(Integer::valueOf).collect(Collectors.toList());
+//		list.stream().sorted(Comparator.reverseOrder()).forEach(System.out::println);
 
 
 
