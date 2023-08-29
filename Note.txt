@@ -161,6 +161,13 @@ If map.put(key, value) returns null, then the statement “map.put(e, PRESENT) =
 If map.put(key, value) returns old value of the key, then the statement “map.put(e, PRESENT) == null” will return false and element is not added to the HashSet(internally HashMap).
 
 ______________________________________________________________________________________________________________________________________
+How to handle password using Spring Security
+Password Encoders
+First, let’s have a look at the password encoders of Spring Security. All password encoders implement the interface PasswordEncoder.
+
+This interface defines the method encode() to convert the plain password into the encoded form and the method matches() to compare a plain password with the encoded password.
+
+______________________________________________________________________________________________________________________________________
 IO in Java
 
 Buffer in java
