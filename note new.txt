@@ -43,3 +43,5 @@ POST is not idempotent. It is used to create new resource.
 PUT is idempotent, meaning calling it once or multiple times successively has the same effect, and it typically replaces the entire resource
 PUT's best used when ou are updating or replacing existing data.
 
+9) slf4j
+
