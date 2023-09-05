@@ -37,3 +37,9 @@ The following are the three methods you should know about while working on Inter
 - The @ExceptionHandler is an annotation used to handle the specific exceptions and sending the custom responses to the client.
 - check url for more details: https://www.tutorialspoint.com/spring_boot/spring_boot_exception_handling.htm
 
+8) Difference between POST and PUT
+->
+POST is not idempotent. It is used to create new resource.
+PUT is idempotent, meaning calling it once or multiple times successively has the same effect, and it typically replaces the entire resource
+PUT's best used when ou are updating or replacing existing data.
+
