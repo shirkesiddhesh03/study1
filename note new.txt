@@ -44,4 +44,5 @@ PUT is idempotent, meaning calling it once or multiple times successively has th
 PUT's best used when ou are updating or replacing existing data.
 
 9) slf4j
+10) Difference between authorization and authentication
 
