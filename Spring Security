@@ -1,0 +1,17 @@
+SPRING BOOT SECURITY
+dependecy: spring-boot-starter-security
+
+@Configuration
+@EnableWebSecurity
+Extends WebSecurityConfigureAdapter
+---------------------------------------------------------------------
+
+protected void configure(HttpSecurity) throws Exception
+{
+	http.authorizeRequests().
+		.antMatchers("/urlToAccessByAdminOnly").hasRole("ADMIN")
+		.antMatchers("/urlToAccessByUSER&ADMINOnly").hasAnyRole("USER", "ADMIN")
+		.antMatchers("/").permitAll()
+		.and().formLogin();
+		
+}
