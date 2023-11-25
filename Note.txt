@@ -1,7 +1,8 @@
 FUNCTIONAL INTERFACE
 1. Functional inteface is a interface that conatins exactly one abstract method
+2. A functional interface can have any number of default and static methods
 2. Java provides predefined functional interfaces to deal with functional programming.
-	Example- Runnable, ActionListener, etc.
+	Example- Comparable, Runnable, ActionListener, etc.
 
 The reason it's called a "functional interface" is because it effectively acts as a function. Since you can pass interfaces as parameters
 ______________________________________________________________________________________________________________________________________
