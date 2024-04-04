@@ -45,4 +45,6 @@ PUT's best used when ou are updating or replacing existing data.
 
 9) slf4j
 10) Difference between authorization and authentication
+11) Difference between @Qualifier & @Primary
+12) double locking singleton java
 
