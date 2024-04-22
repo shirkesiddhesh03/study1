@@ -47,4 +47,6 @@ PUT's best used when ou are updating or replacing existing data.
 10) Difference between authorization and authentication
 11) Difference between @Qualifier & @Primary
 12) double locking singleton java
+13) diamond problem in java
+14) if interface A and B have same method and class C is implemting both interfaces then can we override those methods?
 
