@@ -1,6 +1,6 @@
 Hibernate: 5.4.36
 Spring: 5.3
-Spring Boot: 2.5
+Spring Boot: 3.2.5
 Maven: 3.6.3	latest: 3.8
 Tomcat: 9.0		latest: 10
 Angular: 11.2.8	latest: 12.2
