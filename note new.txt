@@ -24,6 +24,8 @@ The following are the three methods you should know about while working on Inter
 
 4) how to make list immuatble
 -> Collections.unmodifiableList(list);
+   Collections.unmodifiableSet(set);
+   Collections.unmodifiableMap(map);
 
 5) @SpringBootApplication
 -> combination of @ComponentScan, @EnableAutoConfiguration and @Confuguration
