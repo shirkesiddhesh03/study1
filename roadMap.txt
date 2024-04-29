@@ -1,0 +1,5 @@
+1. Time and space complexity (Big O notation)
+2. Basic data structure and algorithms
+Algorithms: sorting, searching, recursion
+sliding window
+searching algorithms: binary, depth first search, breadth first search
