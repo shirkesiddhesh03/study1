@@ -1,0 +1,41 @@
+List<Integer> numbers= Arrays.asList(71, 18, 42, 21, 67, 32, 95, 14, 56, 87);
+		//FIND ODD AND EVEN NUMBERS
+		
+		System.out.println("even number");
+		numbers.stream().filter(n-> n%2==0).forEach(System.out::println);
+		System.out.println("odd number");
+		numbers.stream().filter(n-> n%2!=0).forEach(System.out::println);
+		//=-=-==-=-=--=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+		
+		//REVERSE ORDER OF LIST
+		System.out.println("reverse order of number");
+		String sorted=numbers.stream().sorted(Comparator.reverseOrder()).map(Object::toString).collect(Collectors.joining(", "));
+		 System.out.println(sorted);
+		
+		//=-=-==-=-=--=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+		 
+		 System.out.println("MAX: "+ numbers.stream().max(Integer::compare).get());
+		 
+		//=-=-==-=-=--=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+		
+		//	COUNT FREQUESNCY OF CHARACTERS IN STRING
+		String str= "Java Concept Of The Day";
+		str=str.replace(" ", "");
+		 Map<Character, Long> charCountMap = str.chars().mapToObj(c -> (char) c)
+				 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+		 
+		//=-=-==-=-=--=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+		 
+		 
+		 Map<String, Long> map1=Stream.of(str.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+		 String firstDuplicate= map1.entrySet().stream().filter(e->e.getValue()>1).map(e->e.getKey()).findFirst().get();
+		 Long occurance= map1.entrySet().stream().filter(e->e.getValue()>1).map(e->e.getValue()).findFirst().get();
+		 System.out.println("first duplicate: "+ firstDuplicate+ " occurances: "+occurance);
+		 
+		 
+		//=-=-==-=-=--=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+		 
+		 List<String> s1=Arrays.asList("Sid","Ass");
+		 List<String> s2=Arrays.asList("Ank","Lahu");
+		 
+		 Stream.concat(s1.stream(), s2.stream()).forEach(System.out::print);
