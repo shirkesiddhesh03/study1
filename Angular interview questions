@@ -19,5 +19,44 @@
 
 4) Explain different type of Angular directives
 -> S A C [Structural directives, Attribute directives, Component directives]
+   1. Structural directives: these directives change structure of HTML DOM
+                             Eg. <tr *ngFor= "let temp of salesArray">
+                                    <td>{{temp.customerName}}</td>
+                                 </tr>
+                                 here. *ngFor directive is responsible for adding new rows ie. changing structure of HTML DOM
+   2. Attribute directives: these directives doesn't change the structure but it changes the behaviour of HTML DOM like changing color, appearance, visibility,etc.
+                            Eg. <div [hidden]="hide()"> Hello </div>
+                                Here, directive hidden is not changing structure like adding or removing html tag but its simply changing the behaviour like hidden
+                                or no hidden
+   3. Component directives
+
+5) Explain the importance of NPM and Node_Modules folder
+-> NPM stands for Node Package Manager. NPM helps to install any JavaScript framework in computer. Eg. npm install jquery
+   Once npm install command is hit, specified framework or dependency will be downloaded from gitHub and stored in the folder "Node_Modules"
+
+6) Explain the importance of Package.json
+-> All Javascript framework we are using in project are listed in this file so that we can install all packages in one go.
+
+7) What is TypeScript and why do we need it?
+-> It is superset of JavaScript. It added types to JavaScript
+   unlike JavaScript, we can specify datatype to variable eg. var a:number
+   It gives nice object oriented programming environment which converts to JavaScript. Eg. javascript is functional language but in 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    
     
