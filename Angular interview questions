@@ -1,0 +1,23 @@
+1) What is Angular and what is use of it?
+-> Angular is a UI binding framework that helps to bind your view with model object.
+   It also helps building SPA using the concept of routing, it also has other features like DI, etc.
+
+2) Differecne between AngularJS and Angular
+-> first version of angular called Angular JS | later versions are called Angular
+   we're using JavaScript | we use TypeScript
+   Architecture: Controller based. view has to load first then it load Controller | it is component based, component has template url, it loads HTML/CSS, model basically compoent becomes central point
+   not mobile compliant | mobile compliant
+   no CLI | CLI
+   no Lazy loading | Lazy loading
+
+3) What are directives in Angular?
+-> Directives help to attach behaviour to HTML DOM, Directives change the behaviour of HTML DOM
+   In simple words we can say it is angular syntax we write in HTML
+   Eg. <div>{{value}}</div>
+       <div [hidden]= "Hide()"> Hello </div>
+   here, value and hidden are directives
+
+4) Explain different type of Angular directives
+-> S A C [Structural directives, Attribute directives, Component directives]
+   
+    
