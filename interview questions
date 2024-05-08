@@ -1,0 +1,173 @@
+Core Java :
+
+1) Serialization vs deserialization
+2) can static and final variables be serialized?
+3) Garbase collector and types
+4) JVM Archoitecture
+5) Metaspace vs Permgen 
+6) which is dynamic memory heap or stack
+7) Java 8 features
+8) Which functional interfaces used in application with example
+9) CompletableFuture vs Future
+10) Executor Service vs ForkJoin 
+11) Cyclic Barier vs CountDownLatch
+12) Perforamce of Collectyions with example
+13) HashSet vs Treeset 
+14) LinkedList vs AarrayList perfomance and which collection to choose among them example
+15) How to create threads in threadpool
+16) Thread life in Threadpool
+17) Sychronized block vs Locks
+18) how to create singleton class and how my intances exist in JVM
+19) Immutable class where you use in application
+20) What is the use of try with resources?
+21) Module in Java 11
+22) Features of Java 11 used in projevts
+23) Concurrent modification excpetion , how to avoid them using same Arraylist type 
+24) fail safe vs fail fast
+25) reduce vs collect
+26) map vs flatmap
+27) Custom Exceptions used in applications
+28) Can we use try with finally
+29) Marker interfaces
+30)What is the difference between extending Exception Class & Runtime Exception Class?
+31)What is the alternative to Synchronized in multi-threading?
+ (How can we avoid deadlocks without using Synchronized methods) 
+32)Race condition 
+33)avoid deadlock  
+34)deadlock identify 
+35)producer consumer patterns
+36) java thread interrupted vs interrupt
+37) volatile , AtomicInteger 
+38) Generics in java , have use in application
+39) How to create annotation
+40 )memory leack problems
+41) Asycronus and unblocking API calling (webClient)
+42) ClassLLoder
+43) JIT 
+
+Java progarms:
+1) Given an unsorted array of N intergers nums with the numbers between 1 to N, find the missing number and number repeating.
+Examples
+N = 5, nums = [1,2,3,3,5] should return [4,3] -> missing number 4, repeating number 3
+N = 7, nums = [1,2,5,6,3,4,4] should return [7,4] -> missing number 7, repeating number 4
+2) write Predicate funtion used in application and call function
+3) String str = Voice to Text perfectly convert your native speech into text in real time.
+Filter vowels and print
+4) List<Integer> daysOfMonths =  Arrays.asList(1,2,3,4,5,6,7,8,9,10); print compltes Dates eg(1-> 01/01/2023)
+5) sort list in reverse order wqith unique records using java 8
+5) Write LinkedLIst add function
+6) Binary search Tree 
+7) Write bubble sort program
+8) iterator impletentation in custom collection class
+9) Java Program to Print sequence of numbers using threads
+10) count duplicate words from file (Files.lines(Path))
+11) grouing by first character and values as String of records separated by record( A-> Apple_Avacado , G-> Guava_Grapes) grouoingBy(s->s.charAt(0), joining("_"))
+
+
+Spring Boot :
+1) Annotations used in applications
+2) SpringBoot vs Spring
+3) Spring bean scopes
+4)spring boot implementation
+5) @primary
+6) circular depenedcy
+7) prototype bean in singleton
+8) @Qulifier
+9) @Controller vs Service vs @Repository
+10) @Profile
+11)@ConfigurationProperties
+12) @Value
+13) @Bean
+14) @Lazy - avoid circular dependency
+15) @loockup - for injecting prototype bean
+predicate in spring data JPA
+16) jwt token implementation using spring boot
+17) @transaction transactionmanagement (isolation propagation)
+18) spring -servlet ordering or filtering ordering
+19) how maximum traffic request resolve in spring
+20 ) how many servlet exist in spring boot
+21 )spring session
+22) global session
+23) how many servlet creating in spring
+24) Exceptiona hndiling using spring boot
+25) Http Menthods  GET/POST/PUT/DELETE
+27) Http Status code returns 
+28) Reactive progarmming WebFlux
+29) Spring Cache
+30) Spring batch implemation (Chunks)
+31) Step vs tasklet
+32) Partitioning in spring batch
+33) how to create sceduler trigger (cron jobs)
+34) ACID prperties configured using @transactional (isolation vs propagation)
+35)Explain the authentication and authorization scheme implemented in your project?
+36)How to perform Asynchronous Rest API in java?
+37)How can we achieve a centralized way of exception handling 
+38) Use of profilers and how can we implement in java?
+39)Describe the way you design a Rest API to make it a secured one?
+40)load multiple properties files  - @profile
+41) load different database use @ConfigurationProperties
+
+Hibernate +JPA :
+
+ORM relations
+Hibernate Inheritance Mapping
+bidirectional mapping example
+composite-key
+inverse=true attribute
+update vs merge method
+save vs persist method
+get vs load method
+evict method
+optimistic lock (versioning)
+calling stored procedure in hibernae
+fetch="select" vs fetch="join"
+orphanRemoval 
+how second level cache data stored in cluster
+Query cache
+How can we implement pagination in Hibernates?
+Predicate in Spring Data JPA
+declare own function in Spring data JPA repository
+Generator key in hibernate which used in applications
+Significance of @Embeddable and @Embedded annotations?
+On which parameters the connection pool size is calculated in Hibernates?
+How to perform Asynchronous Rest API in java?
+Agregate vs composit
+
+SQL queries : 
+1) remove duplicates
+2) department name with number of employees counts
+3) carteion product
+4)SQL Employee- Department hirarchy
+5) how to manage second level cache data stored in cluster
+6) top 3 score Marks 
+7) seconfd highest salary
+8) super key vs composit vs priomary
+9) Views , multiviews
+10) indexes , what is impact of using indexes
+
+
+Microservices :'
+1) Explain project of microservices
+ 2) Service Registry(Eureca discovery service)
+ 3) Authenticxation and Authorization in microservices
+ 4) Gatway uses
+ 5) how gateway know addresses of each microservices instances
+ 6) Logs monitoring
+ 7) Spring Cloud bus implentation and uses
+ 8) @secured vs @preauthorize
+ 9) RestTemplate vs Fiegn Client for syncronus microservices communicattion
+ 10)  How to perform Asynchronous Rest API in java?
+ asyncronus microservices communicattion(JMS, rabiit MQ, KAfka)
+ 11) How to restrict Rest API requests to 1000 calls in 5 minutes in java? (@BulkHead, @RateLimiter)
+ 12) @Circuit Breaker patterns
+ 13) Actuator uses and how to create own actuator (@RestEndPoint annotation)
+
+
+Design patters:
+1) solid principles
+2) cohesion vs coupling
+3) falut tolerance vs fault resilance
+4) Microservices design patterns
+5) creational patterns (singleton, prototype, factory , absrract factory, obkect pool)
+6)Structual (facade, adapter,flyweight(String pool)),Template
+7) strategry, observer
