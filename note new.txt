@@ -54,4 +54,5 @@ PUT's best used when ou are updating or replacing existing data.
 15) what is thread pool
 14) why we use join() in multithreading
 15) Volatile keyword in java
+16) what is parallel stream 
 
