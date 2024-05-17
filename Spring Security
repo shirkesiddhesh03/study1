@@ -15,3 +15,63 @@ protected void configure(HttpSecurity) throws Exception
 		.and().formLogin();
 		
 }
+
+==========================================================================================================================
+@PreAuthorize: This annotation is used to specify a pre-authentication access control expression that must evaluate to true before
+the method execution proceeds. It allows you to define fine-grained access control rules based on method parameters or the authentication context.
+
+@PostAuthorize: This annotation is used to specify a post-authentication access control expression that must evaluate to true after
+the method execution completes. It allows you to further restrict access to the method's return value.
+
+eg.
+public class MyService {
+    
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public void adminOnlyMethod() {
+        // Method logic accessible only to users with ROLE_ADMIN role
+    }
+
+    @PostAuthorize("returnObject.owner == authentication.name")
+    public MyEntity findEntityById(long id) {
+        // Method logic to find entity by id
+        return myRepository.findById(id);
+    }
+}
+
+----------------------------------------------------------------------------------------------------------
+@Secured: This annotation is used to specify a list of security roles that are allowed to access the annotated method.
+It provides a simpler alternative to using @PreAuthorize when you only need role-based access control.
+
+eg. 
+public class MyService {
+    
+    @Secured("ROLE_USER")
+    public void userMethod() {
+        // Method logic accessible only to users with ROLE_USER role
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+@EnableGlobalMethodSecurity: This annotation is used to enable method-level security in a Spring Boot application.
+It provides configuration options to enable various security annotations like @PreAuthorize, @PostAuthorize, and @Secured.
+
+eg.
+
+@Configuration
+@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
+public class MethodSecurityConfig {
+    // Configuration class to enable method-level security
+}
+
+
+
+
+
+
+
+
+
+
+
+
