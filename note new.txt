@@ -57,3 +57,30 @@ PUT's best used when ou are updating or replacing existing data.
 16) what is parallel stream 
 17) Types of garbage collector
 
+18) @Async
+-> In Java, the @Async annotation is part of the Spring Framework's concurrency support. When you annotate a method with @Async, Spring will execute that method asynchronously in a separate thread pool. This is particularly useful for offloading tasks that are potentially time-consuming or I/O-bound, allowing the main thread to continue processing other tasks without waiting for the asynchronous method to complete.
+
+Here's how you typically use the @Async annotation:
+
+*1* Enable Async Support:
+Before using @Async, you need to enable async support in your Spring application. You can do this by adding the @EnableAsync annotation to a configuration class. 
+Eg.
+@Configuration
+@EnableAsync
+public class AppConfig {
+    // Other configurations
+}
+
+*2* Annotate Methods:
+Once async support is enabled, you can annotate methods with @Async to indicate that they should be executed asynchronously.
+The method annotated with @Async can have a return type of void, Future<T>, or CompletableFuture<T>, where T is the type of the result returned by the asynchronous method.
+Eg. 
+
+@Service
+public class MyService {
+    @Async
+    public CompletableFuture<String> asyncMethod() {
+        // Perform asynchronous tasks here
+    }
+}
+
