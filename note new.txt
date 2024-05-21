@@ -55,4 +55,5 @@ PUT's best used when ou are updating or replacing existing data.
 14) why we use join() in multithreading
 15) Volatile keyword in java
 16) what is parallel stream 
+17) Types of garbage collector
 
