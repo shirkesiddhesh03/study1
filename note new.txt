@@ -84,3 +84,39 @@ public class MyService {
     }
 }
 
+19) @Transactional
+-> The @Transactional annotation is used in the Spring Framework to demarcate transaction boundaries around methods. Transactions ensure the 
+   atomicity, consistency, isolation, and durability (ACID) properties of database operations.
+- You can apply the @Transactional annotation to either individual methods or entire classes. When applied at the class level, it applies to all 
+  public methods of that class.
+- The @Transactional annotation allows you to control various aspects of transactional behavior, such as isolation level, timeout, rollback 
+  rules, etc., through its attributes.
+
+*Transaction Propagation:
+- By default, the @Transactional annotation applies the Propagation.REQUIRED propagation behavior, which means that if a transaction already 
+  exists, the method will join that transaction. If no transaction exists, a new one will be created.
+- You can customize the propagation behavior using the propagation attribute of @Transactional.
+
+*Exception Handling:
+- By default, Spring will rollback the transaction for any unchecked exception (RuntimeException or its subclasses) that occurs during the 
+  method execution. You can customize the rollback behavior using the rollbackFor and noRollbackFor attributes of @Transactional
+
+Eg.
+@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, timeout = 30, rollbackFor = Exception.class)
+
+20) Lazy fetching vs Eager fetching in Hibernate
+->- Lazy fetching means that associated objects are not loaded from the database until they are explicitly accessed by the application.
+  - Eager fetching means that associated objects are loaded from the database at the same time as the parent object.
+
+  - Lazy fetching can help improve performance by avoiding the unnecessary loading of associated objects if they are not always needed.
+  - eager fetching can lead to performance issues if the associated objects are large in number or if they are not always needed, as it may 
+   result in loading unnecessary data.
+Eg. 
+@OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
+private List<Child> children;
+
+@OneToMany(mappedBy = "parent", fetch = FetchType.EAGER)
+private List<Child> children;
+
+
+
