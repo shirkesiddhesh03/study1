@@ -123,5 +123,7 @@ private List<Child> children;
 @OneToMany(mappedBy = "parent", fetch = FetchType.EAGER)
 private List<Child> children;
 
+21) difference between young generation and old generation memory space in java
+
 
 
