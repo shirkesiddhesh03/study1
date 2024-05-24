@@ -57,6 +57,92 @@
                 if you put @NgModule it becomes Angular module
    for our understanding we can say that its kinda annotations
 
+11) What is template
+-> Templates are nothing but angular html view, there are two ways to defining template- one is inline and other is seperate HTML file
+   eg. 
+      @Component9({
+            selector: "app1-root",
+            templateUrl: "./Custapp.Component.html",
+            template: "<b> inlinetemplate</b>
+   here componen.html is 2nd way and content under template is inline way
+
+12) Types of data binding in Angular
+-> Data binding defines how tha view and component communicate with each other.
+   1. interpolation or expression binding that mix data in html tags. eg- <td>{{cust.CustomerName}}</td>
+   2. propert binding or square brackets in this data flows from component to view. eg- <input [disable]="xyz">
+   3. event binding or round brackets in this data flows from view to component. eg- <input type="button" (click)="Toggle()">
+   4. two way binding, in this data flows from view to component and also from component to view. eg.- <input [(ngModel)]="cust.CustId">
+
+13) Explain architecture of Angular
+-> Template i.e. view talks to component via binding, group of components is module. explain little about directives.
+   To write and business logic we create service, to add service object in component we us DI
+
+14) what is SPA in angular
+->  it refreshes the page without reloading entire page
+
+15) how to implement SPA in Angular?
+-> using routing we can achieve this
+
+16) What is routing?
+-> Routing is a collection which has two things URL and which component to load when this URL is called.
+   Main goal of routing is to define the navigation of your angular application
+
+17) How to implement routing?
+-> We need to do three things:
+   1. define routing collection and specify which component needs to be loaded for which URL
+      eg. 
+         export const HomeRoutes=[
+               {path:'', component: HomeComponent},
+               {path:'Login', component: LoginComponent},
+               {path:'Home', component: HomeComponent},
+               {path:'Customer', component: CustomerComponent}
+         ];
+   2. In your HTML you need to define <router-outlet> </router-outlet>, in this place pages will loaded
+   3. also you need to define [routerLink] to specify the path of routing which is define in routing collection
+      eg.
+         <br>
+            <a [routerLink]="['Home']">Home</a><br>
+            <a [routerLink]="['Customer']">Customer</a>
+         <div>
+            <router-outlet> </router-outlet>
+         </div>
+
+18) How to implement Lazy loading in Angular?
+-> we need to use loadChildren to specify this component should be loaded Lazy ie. load on demand
+   eg. 
+      export const HomeRoutes=[
+               {path:'', component: HomeComponent},
+               {path:'Login', component: LoginComponent},
+               {path:'Home', component: HomeComponent},
+               {path:'Customer', loadChildren: CustomerComponent}
+         ];
+
+19) how to implement DI in Angular
+-> export class MasterPageCompoent{
+      constructor(public l:BaseLogger){
+         this.l.Log();
+      }
+   }
+
+   //Here class MasterPageComponent is showing dependency on class BaseLogger throgh constructor
+   //To declare that BaseLogger is Angular managed object we have to use providers property of NgModule decorator. Eg-
+
+   @NgModule({
+      providers:[
+         {provide: BaseLogger, useClass: HttpLogger},
+         {provide: Http_Interceptors, useClass: JwtInterceptor}
+      ]
+   )}
+
+20) difference between ng serve and ng build commands
+         
+
+
+
+   
+
+
+
 
 
 
