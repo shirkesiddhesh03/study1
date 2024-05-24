@@ -38,12 +38,24 @@
 -> All Javascript framework we are using in project are listed in this file so that we can install all packages in one go.
 
 7) What is TypeScript and why do we need it?
--> It is superset of JavaScript. It added types to JavaScript
+-> It is superset of JavaScript. It adds types to JavaScript
    unlike JavaScript, we can specify datatype to variable eg. var a:number
-   It gives nice object oriented programming environment which converts to JavaScript. Eg. javascript is functional language but in 
+   It gives nice object oriented programming environment which converts to JavaScript.
+   command to convert typescript to javaScript-> tsc filename.ts (this command will give filename.js file)
 
+8) Explain importance of Angular CLI
+-> Angular CLI is command line interface by which we can create initial Angular project template 
 
+9) Explain importance of compenent and modules
+-> Angular is binding framework it binds view and model through component.
+   Component is where you write your binding code
+   Module logically groups compenents.
 
+10) What is decorator in angular? OR what is annotations? OR what is metadata?
+-> Decorator defines what kind of Angular class is it.
+   For example, if you decorate class with @Compoenent then it says this class is Angular component
+                if you put @NgModule it becomes Angular module
+   for our understanding we can say that its kinda annotations
 
 
 
