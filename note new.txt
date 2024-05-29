@@ -125,5 +125,24 @@ private List<Child> children;
 
 21) difference between young generation and old generation memory space in java
 
+22) How to implement cashing in spring boot?
+-> add caching dependency: spring-boot-starter-cache
+   enable caching by adding @EnableCaching annotation to the main class
+   define cachable operations using @Cachable on methods whose result we want to cache
+   choose a cache provider like EhChache or HazeLast
 
+23) Conditional annotations in Spring boot
+-> @ConditionalOnClass, @ConditionalOnMissingClass, @ConditionalOnProperty, @ConditionalOnMissingBean
+
+24) How to get list of all beans in spring boot app?
+-> using getBeanDefinationNames() method of ApplicationContext
+   eg.
+	@AutoWired
+	private ApplicationContext ac;
+
+	public void listBeans(){
+		for(String beanName: ac.getBeanDefinationNames()){
+			Sysout(beanName);
+		}
+	}
 
