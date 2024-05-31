@@ -1,0 +1,6 @@
+select e1.* from emp e1
+inner join (
+	select dept, max(salary) as maxSalary
+    from emp 
+    group by dept) e2
+on e1.dept=e2.dept AND e1.salary=e2.maxSalary;
