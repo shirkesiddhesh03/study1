@@ -156,3 +156,5 @@ private List<Child> children;
    When you annotate a controller method or a controller class with @CrossOrigin, you're essentially telling Spring Boot to relax the same-origin policy for those endpoints,
    allowing requests from different origins (domains, protocols, or ports) to access the resources served by your Spring Boot application.
 
+   Overall, @CrossOrigin is a useful tool for allowing controlled access to your Spring Boot APIs from web applications hosted on different domains.
+
