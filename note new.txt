@@ -158,3 +158,5 @@ private List<Child> children;
 
    Overall, @CrossOrigin is a useful tool for allowing controlled access to your Spring Boot APIs from web applications hosted on different domains.
 
+27) How autowiring works internally? what is default type?
+
