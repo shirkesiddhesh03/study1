@@ -6,6 +6,7 @@ dependecy: spring-boot-starter-security
 Extends WebSecurityConfigureAdapter
 ---------------------------------------------------------------------
 
+@Override
 protected void configure(HttpSecurity) throws Exception
 {
 	http.authorizeRequests().
