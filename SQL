@@ -4,3 +4,23 @@ inner join (
     from emp 
     group by dept) e2
 on e1.dept=e2.dept AND e1.salary=e2.maxSalary;
+
+2) Create INDEX:
+	create INDEX INDEX_NAME
+	ON table_name(column_names);
+
+3) Create procedures
+	create PROCEDURE procedure_name
+	AS
+	<SQL commands>
+	GO;
+4) Execute stored procedure
+	EXEC procedure_name;
+
+5) create trigger
+	create trigger [trigger_name] 
+	[before | after]  
+	{insert | update | delete}  
+	on [table_name]  
+	[for each row]  
+	[trigger_body] 
