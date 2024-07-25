@@ -165,3 +165,13 @@ private List<Child> children;
     public String handleFileUpload(@RequestParam("file") MultipartFile file) {
 	}
 
+30) constructors cant be final
+
+31) static method of interface can only be accessed using interface name
+eg. InterfaceName.staticMethod();
+
+static variable of interface can be accessed using interface name or reference variable of interface or reference variable of implementer class
+eg. InterfaceName.staticMethod();
+
+32) instance methods of subclass can not override static method of super class, it gives compilation error
+
