@@ -174,4 +174,4 @@ static variable of interface can be accessed using interface name or reference v
 eg. InterfaceName.staticMethod();
 
 32) instance methods of subclass can not override static method of super class, it gives compilation error
-
+33) difference between syncronizedHashMap and ConcorrentHashMap
