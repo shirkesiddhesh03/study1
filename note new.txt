@@ -176,3 +176,4 @@ eg. InterfaceName.staticMethod();
 32) instance methods of subclass can not override static method of super class, it gives compilation error
 33) difference between syncronizedHashMap and ConcorrentHashMap
 34) Is-A, Has-A, association
+35) How to detect memmory leak and what steps you would take to fix it?
