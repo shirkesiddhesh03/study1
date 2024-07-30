@@ -177,3 +177,19 @@ eg. InterfaceName.staticMethod();
 33) difference between syncronizedHashMap and ConcorrentHashMap
 34) Is-A, Has-A, association
 35) How to detect memmory leak and what steps you would take to fix it?
+->
+1. "Is-A" Relationship (Inheritance)
+Definition: An "is-a" relationship is characterized by inheritance, where one class (the subclass) is a more specific type of another
+class (the superclass). This means that the subclass inherits the characteristics and behaviors of the superclass and can also add or
+override functionalities.
+
+Example: In a class hierarchy, if Dog is a subclass of Animal, then Dog is-a Animal.
+
+2. "Has-A" Relationship (Composition/Aggregation)
+Definition: A "has-a" relationship represents composition or aggregation, where one class contains a reference to another class as a
+member. This means that one class (the container) has a reference to another class (the contained). The contained class is not a
+subclass but is used as part of the container class's functionality.
+
+Example: If a Library class contains a collection of Book objects, then Library has-a Book.
+Composition: Strong relationship where the contained object cannot exist independently of the container (e.g., a Human has-a Heart).
+Aggregation: Weaker relationship where the contained object can exist independently (e.g., a Classroom has-a Teacher).
