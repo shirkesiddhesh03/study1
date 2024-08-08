@@ -4,7 +4,89 @@ API: this is a set of procedures or functions which allows consumer to use under
 	 API's help services or applications to communicate with each other.	
 
 RestTemplate:
+1. get-
+	ResponseEntity<String> response = restTemplate.exchange(
+                url,
+                HttpMethod.GET,
+                entity,
+                String.class
+        );
+
+2. post-
+	 ResponseEntity<String> response = restTemplate.exchange(
+                url,
+                HttpMethod.POST,
+                entity,
+                String.class
+        );
+
+3. put-
+	 ResponseEntity<String> response = restTemplate.exchange(
+                url,
+                HttpMethod.PUT,
+                entity,
+                String.class
+        );
+
+4. patch-
+	ResponseEntity<String> response = restTemplate.exchange(
+                url,
+                HttpMethod.PATCH,
+                entity,
+                String.class
+        );
+
+5. delete-
+	ResponseEntity<Void> response = restTemplate.exchange(
+                url,
+                HttpMethod.DELETE,
+                entity,
+                Void.class
+        );
+
+------------------------------------------------------------------------------------------------------------------------------
 WebClient:
 1. get-
+	public Mono<String> getExampleData() {
+        return webClient.get()
+                .uri("/data")
+                .retrieve()
+                .bodyToMono(String.class);
+    }
+
+2 post-
+public Mono<String> postExampleData(Object requestBody) {
+    return webClient.post()
+            .uri("/data")
+            .bodyValue(requestBody)
+            .retrieve()
+            .bodyToMono(String.class);
+	}
+
+3. put-
+	public Mono<String> updateData(String id, Object requestBody) {
+        return webClient.put()
+                .uri("/data/{id}", id) // Replace {id} with the actual ID
+                .bodyValue(requestBody) // Set the request body
+                .retrieve()
+                .bodyToMono(String.class); // Expect response body to be a String
+    }
+
+4. patch-
+	public Mono<String> partialUpdateData(String id, Object patchBody) {
+        return webClient.patch()
+                .uri("/data/{id}", id) // Replace {id} with the actual ID
+                .bodyValue(patchBody) // Set the partial update body
+                .retrieve()
+                .bodyToMono(String.class); // Expect response body to be a String
+    }
+
+5. delete-
+	public Mono<Void> deleteData(String id) {
+        return webClient.delete()
+                .uri("/data/{id}", id) // Replace {id} with the actual ID
+                .retrieve()
+                .bodyToMono(Void.class); // Expect no response body
+    }
 	
 	 
