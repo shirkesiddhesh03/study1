@@ -2,4 +2,9 @@ Microservices: Its is an architectural style through which you can build applica
 
 API: this is a set of procedures or functions which allows consumer to use underlyning service of an application.
 	 API's help services or applications to communicate with each other.	
+
+RestTemplate:
+WebClient:
+1. get-
+	
 	 
