@@ -88,5 +88,29 @@ public Mono<String> postExampleData(Object requestBody) {
                 .retrieve()
                 .bodyToMono(Void.class); // Expect no response body
     }
+________________________________________________________________________________________________________________________________________________________________________________
+
+									KAFKA
+								---------------------
+1. add configurations in application.yml
+2. create a service class to write login to publish messages
+	a. autowire KafkaTemplate
+		@Autowired
+		private KafkaTemplate<String, Object> template;
+
+	b. create method that will write messages to topic
+	eg.
+		public void sendMessageToTopic(String mssg){
+			CompletableFuture<SendResult<String,Object> future= template.send("topicName1", mssg);
+			future.whenComplete((result,exception)->{
+				if(exception == null){
+					System.out.println("Sent message=["+ mssg+ "]"
+				}else{
+					System.out.println("Unable to sent message=" + exception.getMessage());
+				}
+				
+			});
+		}
+
 	
 	 
