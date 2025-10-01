@@ -1,6 +1,6 @@
-Hibernate: 5.4.36
-Spring: 5.3
-Spring Boot: 3.2.5
+Hibernate: 6.1
+Spring: 6.2.11
+Spring Boot: 3.5.5
 Gradle: 8.5
 Maven: 3.6.3	latest: 3.8
 Tomcat: 9.0		latest: 10
@@ -181,3 +181,4 @@ ________________________________________________________________________________
 
 		
 		
+
