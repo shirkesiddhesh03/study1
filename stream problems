@@ -39,3 +39,18 @@ List<Integer> numbers= Arrays.asList(71, 18, 42, 21, 67, 32, 95, 14, 56, 87);
 		 List<String> s2=Arrays.asList("Ank","Lahu");
 		 
 		 Stream.concat(s1.stream(), s2.stream()).forEach(System.out::print);
+		//=-=-==-=-=--=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+		// ✅ 1. Highest-paid employee per department
+        Map<String, Optional<Employee>> highestPaid = employees.stream()
+            .collect(Collectors.groupingBy(
+                e -> e.department,
+                Collectors.maxBy(comparingDouble(e -> e.salary))
+            ));
+
+        // ✅ 2. Total salary expenditure per department
+        Map<String, Double> totalSalary = employees.stream()
+            .collect(Collectors.groupingBy(
+                e -> e.department,
+                Collectors.summingDouble(e -> e.salary)
+            ));
