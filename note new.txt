@@ -193,3 +193,6 @@ subclass but is used as part of the container class's functionality.
 Example: If a Library class contains a collection of Book objects, then Library has-a Book.
 Composition: Strong relationship where the contained object cannot exist independently of the container (e.g., a Human has-a Heart).
 Aggregation: Weaker relationship where the contained object can exist independently (e.g., a Classroom has-a Teacher).
+
+36) why main method is public
+
