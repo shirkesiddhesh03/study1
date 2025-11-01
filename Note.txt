@@ -68,6 +68,16 @@ class B
 	{
 		return b;
 	}
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+    	// Prevent cloning
+    	throw new CloneNotSupportedException("Cloning not allowed for singleton");
+	}
+
+	//these readResolve() & clone() can be public or private, doesn't matter
+	protected Object readResolve() {
+    	return INSTANCE; // always return the existing singleton
+	}
 }
 ______________________________________________________________________________________________________________________________________
 
@@ -398,6 +408,7 @@ public class DataSourceManager
 	}
 	
 }
+
 
 
 
