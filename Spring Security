@@ -17,6 +17,24 @@ protected void configure(HttpSecurity) throws Exception
 		
 }
 
+================================================================================================================
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/public/**").permitAll()
+                .anyRequest().authenticated()
+            )
+            .oauth2ResourceServer(oauth2 -> oauth2.jwt());
+
+        return http.build();
+    }
+}
+
 ==========================================================================================================================
 @PreAuthorize: This annotation is used to specify a pre-authentication access control expression that must evaluate to true before
 the method execution proceeds. It allows you to define fine-grained access control rules based on method parameters or the authentication context.
